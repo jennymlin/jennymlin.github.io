@@ -7,10 +7,9 @@ function updateClock() {
   var seconds = date.getSeconds();
   var time = [hours, ("0" + minutes).slice(-2), ("0" + seconds).slice(-2)];
 
-  var display = time.join(":");
   var color = "#" + time.join("");
 
-  clock.innerHTML = display;
+  clock.innerHTML = color;
   background.style.backgroundColor = color;
 
   setTimeout(updateClock, 1000);
