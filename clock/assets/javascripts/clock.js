@@ -5,11 +5,12 @@ function updateClock() {
   var hours = date.getHours();
   var minutes = date.getMinutes();
   var seconds = date.getSeconds();
-  var time = [hours, ("0" + minutes).slice(-2), ("0" + seconds).slice(-2)];
+  var time = [("0" + hours).slice(-2), ("0" + minutes).slice(-2), ("0" + seconds).slice(-2)];
 
+  var time_display = time.join(":");
   var color = "#" + time.join("");
 
-  clock.innerHTML = color;
+  clock.innerHTML = time_display;
   background.style.backgroundColor = color;
 
   setTimeout(updateClock, 1000);
