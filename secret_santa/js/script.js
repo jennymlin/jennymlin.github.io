@@ -1,65 +1,78 @@
 //init variables
 var dan = {
   name: "Daniel",
-  available_matches: ["Tiffany", "Judy", "Kun"],
-  match: ""
+  available_matches: [tiff, judy, kun],
+  match: {}
 };
 var jen = {
   name: "Jenny",
-  available_matches: ["Tiffany", "Judy", "Kun"],
-  match: ""
+  available_matches: [tiff, judy, kun],
+  match: {}
 };
 var tiff = {
   name: "Tiffany",
-  available_matches: ["Jenny", "Daniel", "Judy", "Kun"],
-  match: ""
+  available_matches: [jen, dan, judy, kun],
+  match: {}
 };
 var judy = {
   name: "Judy",
-  available_matches: ["Tiffany", "Daniel", "Jenny"],
-  match: ""
+  match: {}
 };
 var kun = {
   name: "Kun",
-  available_matches: ["Tiffany", "Daniel", "Jenny"],
-  match: ""
+  available_matches: {},
+  match: {}
 };
+
+judy.available_matches = [tiff, dan, jen];
+kun.available_matches = [tiff, dan, jen];
+tiff.available_matches = [jen, dan, judy, kun];
+jen.available_matches = [tiff, judy, kun];
+dan.available_matches = [tiff, judy, kun];
+
 var people = [dan, jen, tiff, judy, kun];
-var isDuplicate;
+var tries = 0;
 
 init();
+//display();
+debug();
 
-function init (){
-  var tries = 0;
+function init() {
   do {
-    generateMatches();
-    checkForDuplicates();
-    if (isDuplicate){
-      isDuplicate = false;
-    }
     tries++;
-  } while (isDuplicate);
-  
-  document.getElementById("duplicates").innerHTML = (isDuplicate) ? "Yes":"No";
-  document.getElementById("tries").innerHTML = tries;
+    generateMatches();
+  } while (hasDuplicates());
 };
 
-function generateMatches(){
-  for (i = 0; i < people.length; i++){
-    var j = getRandomInt(0,people[i].available_matches.length-1);
+function display() {
+  document.getElementById("intro").innerHTML = "Hello, " + people[2].name + "! Your match is " + people[2].match.name + ".";
+};
+
+function debug() {
+  for (i = 0; i < people.length; i++) {
+    document.getElementById("person" + i).innerHTML = people[i].name + ": matched with " + people[i].match.name;
+  }
+  document.getElementById("duplicates").innerHTML = (hasDuplicates()) ? "Yes duplicates" : "No duplicates";
+  document.getElementById("tries").innerHTML = tries + " tries";
+};
+
+function generateMatches() {
+  for (i = 0; i < people.length; i++) {
+    var j = getRandomInt(0, people[i].available_matches.length - 1);
     people[i].match = people[i].available_matches[j];
-    document.getElementById("person"+i).innerHTML = people[i].name + ": matched with " + people[i].match;
+    console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
   }
 };
 
-function checkForDuplicates(){
-  for (j = 0; j < people.length; j++){
-    for (k = j+1; k < people.length; k++){
-      if (k != j && people[k].match == people[j].match){
-        isDuplicate = true;
+function hasDuplicates() {
+  for (j = 0; j < people.length; j++) {
+    for (k = j + 1; k < people.length; k++) {
+      if (k != j && people[k].match == people[j].match) {
+        return true;
       }
     }
   }
+  return false;
 };
 
 function getRandomInt(min, max) {
