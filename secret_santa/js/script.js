@@ -32,10 +32,11 @@ dan.available_matches = [tiff, judy, kun];
 
 var people = [dan, jen, tiff, judy, kun];
 var tries = 0;
+var hashvalue;
 
 init();
-//display();
-debug();
+display();
+//showDebug();
 
 function init() {
   do {
@@ -45,12 +46,17 @@ function init() {
 };
 
 function display() {
-  document.getElementById("intro").innerHTML = "Hello, " + people[2].name + "! Your match is " + people[2].match.name + ".";
+  hashvalue = window.location.hash.substr(1);
+  for (i = 0; i < people.length; i++) {
+    if (hashvalue.toLowerCase() == people[i].name.toLowerCase()) {
+      document.getElementById("intro").innerHTML = "Hello, " + people[i].name + "! Your match is " + people[i].match.name + ".";
+    }
+  }
 };
 
-function debug() {
-  var type = window.location.hash.substr(1);
-  document.getElementById("hash-value").innerHTML = type;
+function showDebug() {
+  document.getElementById("debugging").style.visibility = "visible";
+  document.getElementById("hash-value").innerHTML = hashvalue;
 
   for (i = 0; i < people.length; i++) {
     document.getElementById("person" + i).innerHTML = people[i].name + ": matched with " + people[i].match.name;
