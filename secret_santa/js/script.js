@@ -36,9 +36,10 @@ var hashvalue;
 
 init();
 display();
-//showDebug();
+showDebug();
 
 function init() {
+  Math.seedrandom('water')
   do {
     tries++;
     generateMatches();
