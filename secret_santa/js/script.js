@@ -24,6 +24,7 @@ var kun = {
   match: {}
 };
 
+//hard-code allowed matches
 judy.available_matches = [tiff, dan, jen];
 kun.available_matches = [tiff, dan, jen];
 tiff.available_matches = [jen, dan, judy, kun];
@@ -35,18 +36,21 @@ var tries = 0;
 var hashvalue;
 
 init();
-display();
+showResults();
 showDebug();
 
 function init() {
+  //pseudo random generator seed
   Math.seedrandom('water')
   do {
     tries++;
     generateMatches();
-  } while (hasDuplicates());
+  } while (hasSelfAssignments());
 };
 
-function display() {
+//tell user who their match is
+function showResults() {
+  //get hash value from the URL and display the corresponding match
   hashvalue = window.location.hash.substr(1);
   for (i = 0; i < people.length; i++) {
     if (hashvalue.toLowerCase() == people[i].name.toLowerCase()) {
@@ -55,6 +59,7 @@ function display() {
   }
 };
 
+//show all matches
 function showDebug() {
   document.getElementById("debugging").style.visibility = "visible";
   document.getElementById("hash-value").innerHTML = hashvalue;
@@ -66,6 +71,7 @@ function showDebug() {
   document.getElementById("tries").innerHTML = tries;
 };
 
+//randomly assign matches
 function generateMatches() {
   for (i = 0; i < people.length; i++) {
     var j = getRandomInt(0, people[i].available_matches.length - 1);
@@ -74,7 +80,8 @@ function generateMatches() {
   }
 };
 
-function hasDuplicates() {
+//check if anyone is assigned to themselves
+function hasSelfAssignments() {
   for (j = 0; j < people.length; j++) {
     for (k = j + 1; k < people.length; k++) {
       if (k != j && people[k].match == people[j].match) {
@@ -85,6 +92,7 @@ function hasDuplicates() {
   return false;
 };
 
+//random integer generator
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
