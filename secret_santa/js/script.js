@@ -67,7 +67,7 @@ function showDebug() {
   for (i = 0; i < people.length; i++) {
     document.getElementById("person" + i).innerHTML = people[i].name + ": matched with " + people[i].match.name;
   }
-  document.getElementById("duplicates").innerHTML = (hasDuplicates()) ? "Yes" : "No";
+  document.getElementById("duplicates").innerHTML = (hasSelfAssignments()) ? "Yes" : "No";
   document.getElementById("tries").innerHTML = tries;
 };
 
