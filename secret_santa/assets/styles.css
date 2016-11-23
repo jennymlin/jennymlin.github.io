@@ -4,15 +4,19 @@ body {
 
 #intro {
   font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 40px;
   letter-spacing: 1px;
   color: white;
   text-align: center;
   margin-top: 80px;
 }
 
+#intro-match {
+  font-size: 40px;
+}
+
 #debugging {
   font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
   visibility: hidden;
   margin-top: 80px;
 }

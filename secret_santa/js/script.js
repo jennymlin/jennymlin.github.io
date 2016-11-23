@@ -54,7 +54,8 @@ function showResults() {
   hashvalue = window.location.hash.substr(1);
   for (i = 0; i < people.length; i++) {
     if (hashvalue.toLowerCase() == people[i].name.toLowerCase()) {
-      document.getElementById("intro").innerHTML = "Hello, " + people[i].name + "! Your match is " + people[i].match.name + ".";
+      document.getElementById("intro-user").innerHTML = "Hello, " + people[i].name + "! Your match is:"; 
+      document.getElementById("intro-match").innerHTML = people[i].match.name;
     }
   }
 };
