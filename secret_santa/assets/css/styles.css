@@ -1,4 +1,5 @@
 body {
+  width: 100%;
   height: 100%;
   background-color: #2a2a2a;
   text-rendering: optimizeLegibility;
@@ -11,14 +12,13 @@ p {
 }
 
 .background {
-  background: url('background.png');
+  position: absolute;
+  top: 20px;
+  background-image: url('../images/background.png');
   background-repeat: no-repeat;
   background-position: top;
-  background-size: 55%;
-  position: absolute;
-  top: 25px;
+  background-size: 100%;
   height: 100%;
-  width: 100%;
 }
 
 #intro {
@@ -26,18 +26,13 @@ p {
   font-size: 1em;
   color: white;
   text-align: center;
-  margin-top: 15%;
+  margin-top: 34%;
 }
 
 #intro-match {
   font-family: 'Arima Madurai', 'Helvetica Neue', Arial, sans-serif;
   font-size: 3em;
-}
-
-.details {
   margin-top: 5%;
-  font-size: 0.8em;
-  color: #9EB7C2;
 }
 
 #debugging {
