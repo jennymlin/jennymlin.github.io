@@ -1,27 +1,33 @@
 //init variables
 var dan = {
   name: "Daniel",
-  available_matches: [tiff, judy, kun],
-  match: {}
+  slug: "beast",
+  available_matches: null,
+  match: null
 };
 var jen = {
   name: "Jenny",
-  available_matches: [tiff, judy, kun],
-  match: {}
+  slug: "esmeralda",
+  available_matches: null,
+  match: null
 };
 var tiff = {
   name: "Tiffany",
-  available_matches: [jen, dan, judy, kun],
-  match: {}
+  slug: "bambi",
+  available_matches: null,
+  match: null
 };
 var judy = {
   name: "Judy",
-  match: {}
+  slug: "rapunzel",
+  available_matches: null,
+  match: null
 };
 var kun = {
   name: "Kun",
-  available_matches: {},
-  match: {}
+  slug: "simba",
+  available_matches: null,
+  match: null
 };
 
 //hard-code allowed matches
@@ -37,11 +43,11 @@ var hashvalue;
 
 init();
 showResults();
-showDebug();
+// showDebug();
 
 function init() {
   //pseudo random generator seed
-  Math.seedrandom('cold')
+  Math.seedrandom('taxes')
   do {
     tries++;
     generateMatches();
@@ -92,8 +98,8 @@ function showResults() {
   //get hash value from the URL and display the corresponding match
   hashvalue = window.location.hash.substr(1);
   for (i = 0; i < people.length; i++) {
-    if (hashvalue.toLowerCase() == people[i].name.toLowerCase()) {
-      document.getElementById("intro-user").innerHTML = "Hello, " + people[i].name + "! Your match is:"; 
+    if (hashvalue.toLowerCase() == people[i].slug.toLowerCase()) {
+      document.getElementById("intro-user").innerHTML = "Hello, " + people[i].name + "! Your Secret Santa match is:";
       document.getElementById("intro-match").innerHTML = people[i].match.name;
     }
   }
