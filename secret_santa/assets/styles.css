@@ -3,6 +3,7 @@ body {
   background-color: #2a2a2a;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
 p {
@@ -21,7 +22,6 @@ p {
 }
 
 #intro {
-  font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
   letter-spacing: 1px;
   font-size: 1em;
   color: white;
@@ -30,17 +30,17 @@ p {
 }
 
 #intro-match {
+  font-family: 'Arima Madurai', 'Helvetica Neue', Arial, sans-serif;
   font-size: 3em;
 }
 
 .details {
-  margin-top: 80px;
+  margin-top: 5%;
   font-size: 0.8em;
   color: #9EB7C2;
 }
 
 #debugging {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 14px;
   visibility: hidden;
   margin-top: 80px;
