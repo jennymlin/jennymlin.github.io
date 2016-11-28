@@ -1,5 +1,21 @@
 body {
-  background-color: #4e353a;
+  height: 100%;
+  background-color: #2a2a2a;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.background {
+  background: url('background.png');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 55%;
+  position: absolute;
+  top: 25px;
+  height: 100%;
+  width: 100%;
 }
 
 #intro {
@@ -7,11 +23,17 @@ body {
   letter-spacing: 1px;
   color: white;
   text-align: center;
-  margin-top: 80px;
+  padding-top: 170px;
 }
 
 #intro-match {
   font-size: 40px;
+}
+
+.details {
+  margin-top: 80px;
+  font-size: 12px;
+  color: #9EB7C2;
 }
 
 #debugging {
