@@ -47,7 +47,7 @@ showResults();
 
 function init() {
   //pseudo random generator seed
-  Math.seedrandom('taxes')
+  Math.seedrandom('tablet')
   do {
     tries++;
     generateMatches();
