@@ -47,7 +47,7 @@ showResults();
 
 function init() {
   //pseudo random generator seed
-  var seed = "mouse";
+  var seed = "merrychristmas";
   Math.seedrandom(seed);
   console.log(seed);
   do {
