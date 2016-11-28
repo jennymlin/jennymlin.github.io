@@ -99,7 +99,7 @@ function showResults() {
   hashvalue = window.location.hash.substr(1);
   for (i = 0; i < people.length; i++) {
     if (hashvalue.toLowerCase() == people[i].slug.toLowerCase()) {
-      document.getElementById("intro-user").innerHTML = "Hello, " + people[i].name + "!";
+      document.getElementById("intro-user").innerHTML = "Hello, " + people[i].name + "!<br><br>Your Secret Santa match is:";
       document.getElementById("intro-match").innerHTML = people[i].match.name;
     }
   }
