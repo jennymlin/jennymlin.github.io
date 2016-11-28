@@ -41,11 +41,11 @@ showDebug();
 
 function init() {
   //pseudo random generator seed
-  Math.seedrandom('water')
+  Math.seedrandom('cold')
   do {
     tries++;
     generateMatches();
-  } while (hasSelfAssignments());
+  } while (hasSelfAssignments() || hasExtraLoops());
 };
 
 //randomly assign matches
@@ -53,7 +53,7 @@ function generateMatches() {
   for (i = 0; i < people.length; i++) {
     var j = getRandomInt(0, people[i].available_matches.length - 1);
     people[i].match = people[i].available_matches[j];
-    console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
+    // console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
   }
 };
 
@@ -68,6 +68,24 @@ function hasSelfAssignments() {
   }
   return false;
 };
+
+function hasExtraLoops(){
+  var counter = 0;
+  var originalPerson = people[0];
+  var firstPerson = originalPerson;
+  var secondPerson;
+  while (secondPerson != originalPerson) {
+    secondPerson = firstPerson.match;
+    firstPerson = people[people.indexOf(secondPerson)];
+    counter++;
+  }
+  // console.log(counter);
+  if (counter != people.length){
+    return true;
+  }
+}
+
+/*** DISPLAY FUNCTIONS ***/
 
 //tell user who their match is
 function showResults() {
@@ -90,8 +108,11 @@ function showDebug() {
     document.getElementById("person" + i).innerHTML = people[i].name + ": matched with " + people[i].match.name;
   }
   document.getElementById("duplicates").innerHTML = (hasSelfAssignments()) ? "Yes" : "No";
+  document.getElementById("loops").innerHTML = (hasExtraLoops()) ? "Yes" : "No";
   document.getElementById("tries").innerHTML = tries;
 };
+
+/*** UTILS ***/
 
 //random integer generator
 function getRandomInt(min, max) {
