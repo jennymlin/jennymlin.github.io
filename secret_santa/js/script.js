@@ -48,6 +48,27 @@ function init() {
   } while (hasSelfAssignments());
 };
 
+//randomly assign matches
+function generateMatches() {
+  for (i = 0; i < people.length; i++) {
+    var j = getRandomInt(0, people[i].available_matches.length - 1);
+    people[i].match = people[i].available_matches[j];
+    console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
+  }
+};
+
+//check if anyone is assigned to themselves
+function hasSelfAssignments() {
+  for (j = 0; j < people.length; j++) {
+    for (k = j + 1; k < people.length; k++) {
+      if (k != j && people[k].match == people[j].match) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
 //tell user who their match is
 function showResults() {
   //get hash value from the URL and display the corresponding match
@@ -70,27 +91,6 @@ function showDebug() {
   }
   document.getElementById("duplicates").innerHTML = (hasSelfAssignments()) ? "Yes" : "No";
   document.getElementById("tries").innerHTML = tries;
-};
-
-//randomly assign matches
-function generateMatches() {
-  for (i = 0; i < people.length; i++) {
-    var j = getRandomInt(0, people[i].available_matches.length - 1);
-    people[i].match = people[i].available_matches[j];
-    console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
-  }
-};
-
-//check if anyone is assigned to themselves
-function hasSelfAssignments() {
-  for (j = 0; j < people.length; j++) {
-    for (k = j + 1; k < people.length; k++) {
-      if (k != j && people[k].match == people[j].match) {
-        return true;
-      }
-    }
-  }
-  return false;
 };
 
 //random integer generator
