@@ -1,6 +1,8 @@
 body {
   height: 100%;
   background-color: #2a2a2a;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 p {
@@ -21,18 +23,19 @@ p {
 #intro {
   font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
   letter-spacing: 1px;
+  font-size: 1em;
   color: white;
   text-align: center;
-  padding-top: 170px;
+  margin-top: 15%;
 }
 
 #intro-match {
-  font-size: 40px;
+  font-size: 3em;
 }
 
 .details {
   margin-top: 80px;
-  font-size: 12px;
+  font-size: 0.8em;
   color: #9EB7C2;
 }
 
