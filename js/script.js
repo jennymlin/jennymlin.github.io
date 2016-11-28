@@ -47,7 +47,9 @@ showResults();
 
 function init() {
   //pseudo random generator seed
-  Math.seedrandom('tablet')
+  var seed = "mouse";
+  Math.seedrandom(seed);
+  console.log(seed);
   do {
     tries++;
     generateMatches();
