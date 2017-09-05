@@ -69,7 +69,7 @@ function init() {
       tries++;
       generateMatches();
     } while (hasSelfAssignments() || hasExtraLoops());
-    console.log(tries " tries");
+    console.log(tries + " tries");
     showResults();
   });
 };
