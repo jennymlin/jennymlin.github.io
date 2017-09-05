@@ -69,7 +69,7 @@ function init() {
       tries++;
       generateMatches();
     } while (hasSelfAssignments() || hasExtraLoops());
-    console.log(tries);
+    console.log(tries " tries");
     showResults();
   });
 };
@@ -79,7 +79,7 @@ function generateMatches() {
   for (i = 0; i < people.length; i++) {
     var j = getRandomInt(0, people[i].available_matches.length - 1);
     people[i].match = people[i].available_matches[j];
-    console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
+    //console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
   }
 };
 
