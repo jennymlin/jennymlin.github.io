@@ -127,7 +127,7 @@ function showResults() {
 
 //show all matches
 function showDebug() {
-  document.getElementById("debugging").style.visibility = "visible";
+  document.getElementById("debugging").style.visibility = "hidden";
   document.getElementById("hash-value").innerHTML = hashvalue;
 
   for (i = 0; i < people.length; i++) {
