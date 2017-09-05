@@ -56,7 +56,7 @@ var tries = 0;
 var hashvalue;
 
 init();
-showDebug();
+//showDebug();
 
 function init() {
   $( document ).ready(function() {
