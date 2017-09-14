@@ -105,7 +105,7 @@ function hasExtraLoops(){
     firstPerson = people[people.indexOf(secondPerson)];
     counter++;
   }
-  // console.log(counter);
+  console.log(counter);
   if (counter != people.length){
     return true;
   }
