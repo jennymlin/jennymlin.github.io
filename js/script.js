@@ -62,7 +62,7 @@ function init() {
   $( document ).ready(function() {
     console.log( "ready!" );
     //pseudo random generator seed
-    var seed = "moo";
+    var seed = "hello";
     console.log(seed);
     Math.seedrandom(seed);
     do {
