@@ -62,7 +62,7 @@ function init() {
   $( document ).ready(function() {
     console.log( "ready!" );
     //pseudo random generator seed
-    var seed = "hello";
+    var seed = "butterfly";
     console.log(seed);
     Math.seedrandom(seed);
     do {
@@ -79,7 +79,7 @@ function generateMatches() {
   for (i = 0; i < people.length; i++) {
     var j = getRandomInt(0, people[i].available_matches.length - 1);
     people[i].match = people[i].available_matches[j];
-    console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
+    //console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
   }
 };
 
@@ -105,7 +105,7 @@ function hasExtraLoops(){
     firstPerson = people[people.indexOf(secondPerson)];
     counter++;
   }
-  console.log(counter);
+  // console.log(counter);
   if (counter != people.length){
     return true;
   }
