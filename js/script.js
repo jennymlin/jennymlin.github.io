@@ -1,54 +1,54 @@
 //init variables
 var dan = {
   name: "Daniel",
-  slug: "mufasa",
+  slug: "jasmine",
   available_matches: null,
   match: null
 };
 var jen = {
   name: "Jenny",
-  slug: "sarabi",
+  slug: "genie",
   available_matches: null,
   match: null
 };
 var tiff = {
   name: "Tiffany",
-  slug: "rafiki",
+  slug: "aladdin",
   available_matches: null,
   match: null
 };
 var judy = {
   name: "Judy",
-  slug: "zazu",
+  slug: "jafar",
   available_matches: null,
   match: null
 };
 var kun = {
   name: "Kun",
-  slug: "timon",
+  slug: "abu",
   available_matches: null,
   match: null
 };
 var caleb = {
   name: "Caleb",
-  slug: "pumbaa",
+  slug: "iago",
   available_matches: null,
   match: null
 };
 var baby = {
   name: "Baby",
-  slug: "nala",
+  slug: "rajah",
   available_matches: null,
   match: null
 };
 
 //hard-code allowed matches
-judy.available_matches = [tiff, dan, caleb, baby];
-kun.available_matches = [tiff, jen, caleb, baby];
-tiff.available_matches = [jen, dan, judy, baby];
-caleb.available_matches = [jen, dan, judy, kun, baby];
-jen.available_matches = [judy, kun, caleb];
-dan.available_matches = [tiff, kun, caleb];
+judy.available_matches = [dan, jen, tiff, caleb, baby];
+kun.available_matches = [dan, jen, tiff, caleb, baby];
+tiff.available_matches = [dan, jen, judy, kun, baby];
+caleb.available_matches = [dan, jen, judy, kun, baby];
+jen.available_matches = [tiff, judy, kun, caleb];
+dan.available_matches = [tiff, judy, kun, caleb];
 baby.available_matches = [tiff, judy, kun, caleb];
 
 var people = [dan, jen, tiff, judy, kun, caleb, baby];
