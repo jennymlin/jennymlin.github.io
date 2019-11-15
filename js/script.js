@@ -51,12 +51,15 @@ var baby2 = {
 //hard-code allowed matches
 kun.available_matches = [dan, jen, tiff, judy, caleb, ethan, baby2];
 judy.available_matches = [dan, jen, tiff, kun, caleb, ethan, baby2];
+
 tiff.available_matches = [dan, jen, judy, kun, caleb, ethan, baby2];
 caleb.available_matches = [dan, jen, tiff, judy, kun, ethan, baby2];
+
 dan.available_matches = [jen, tiff, judy, kun, caleb, ethan, baby2];
-jen.available_matches = [dan, tiff, judy, kun, caleb, baby2];
-ethan.available_matches = [dan, jen, tiff, judy, kun, caleb, baby2];
-baby2.available_matches = [jen, dan, tiff, judy, kun, caleb, ethan];
+ethan.available_matches = [jen, tiff, judy, kun, caleb, baby2];
+
+jen.available_matches = [dan, tiff, judy, kun, caleb];
+baby2.available_matches = [dan, tiff, judy, kun, caleb];
 
 var people = [kun, judy, tiff, caleb, dan, jen, ethan, baby2];
 var tries = 0;
@@ -69,7 +72,7 @@ function init() {
   $( document ).ready(function() {
     console.log( "ready!" );
     //pseudo random generator seed
-    var seed = "banana";
+    var seed = "stars";
     console.log(seed);
     Math.seedrandom(seed);
     do {
