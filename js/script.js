@@ -54,9 +54,9 @@ judy.available_matches = [dan, jen, tiff, kun, caleb, ethan, baby2];
 tiff.available_matches = [dan, jen, judy, kun, caleb, ethan, baby2];
 caleb.available_matches = [dan, jen, tiff, judy, kun, ethan, baby2];
 dan.available_matches = [jen, tiff, judy, kun, caleb, ethan, baby2];
-jen.available_matches = [dan, tiff, judy, kun, caleb];
+jen.available_matches = [dan, tiff, judy, kun, caleb, baby2];
 ethan.available_matches = [dan, jen, tiff, judy, kun, caleb, baby2];
-baby2.available_matches = [dan, jen, tiff, judy, kun, caleb, ethan];
+baby2.available_matches = [jen, dan, tiff, judy, kun, caleb, ethan];
 
 var people = [kun, judy, tiff, caleb, dan, jen, ethan, baby2];
 var tries = 0;
