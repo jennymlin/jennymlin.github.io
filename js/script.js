@@ -1,57 +1,64 @@
 //init variables
-var dan = {
-  name: "Daniel",
-  slug: "jasmine",
-  available_matches: null,
-  match: null
-};
-var jen = {
-  name: "Jenny",
-  slug: "genie",
-  available_matches: null,
-  match: null
-};
-var tiff = {
-  name: "Tiffany",
-  slug: "aladdin",
+var kun = {
+  name: "Kun",
+  slug: "flounder",
   available_matches: null,
   match: null
 };
 var judy = {
   name: "Judy",
-  slug: "jafar",
+  slug: "sebastian",
   available_matches: null,
   match: null
 };
-var kun = {
-  name: "Kun",
-  slug: "abu",
+var tiff = {
+  name: "Tiffany",
+  slug: "ariel",
   available_matches: null,
   match: null
 };
 var caleb = {
   name: "Caleb",
-  slug: "iago",
+  slug: "triton",
   available_matches: null,
   match: null
 };
-var baby = {
-  name: "Baby",
-  slug: "rajah",
+var dan = {
+  name: "Daniel",
+  slug: "grimsby",
+  available_matches: null,
+  match: null
+};
+var jen = {
+  name: "Jenny",
+  slug: "ursula",
+  available_matches: null,
+  match: null
+};
+var ethan = {
+  name: "Ethan",
+  slug: "scuttle",
+  available_matches: null,
+  match: null
+};
+var baby2 = {
+  name: "New Baby",
+  slug: "max",
   available_matches: null,
   match: null
 };
 
 //hard-code allowed matches
-judy.available_matches = [dan, jen, tiff, caleb, baby];
-kun.available_matches = [dan, jen, tiff, caleb, baby];
-tiff.available_matches = [dan, jen, judy, kun, baby];
-caleb.available_matches = [dan, jen, judy, kun, baby];
-jen.available_matches = [tiff, judy, kun, caleb];
-dan.available_matches = [tiff, judy, kun, caleb];
-baby.available_matches = [tiff, judy, kun, caleb];
+kun.available_matches = [dan, jen, tiff, judy, caleb, ethan, baby2];
+judy.available_matches = [dan, jen, tiff, kun, caleb, ethan, baby2];
+tiff.available_matches = [dan, jen, judy, kun, caleb, ethan, baby2];
+caleb.available_matches = [dan, jen, tiff, judy, kun, ethan, baby2];
+dan.available_matches = [jen, tiff, judy, kun, caleb, ethan, baby2];
+jen.available_matches = [dan, tiff, judy, kun, caleb, baby2];
+ethan.available_matches = [dan, jen, tiff, judy, kun, caleb, baby2];
+baby2.available_matches = [jen, dan, tiff, judy, kun, caleb, ethan];
 
-var people = [dan, jen, tiff, judy, kun, caleb, baby];
+var people = [kun, judy, tiff, caleb, dan, jen, ethan, baby2];
 var tries = 0;
 var hashvalue;
 
@@ -62,7 +69,7 @@ function init() {
   $( document ).ready(function() {
     console.log( "ready!" );
     //pseudo random generator seed
-    var seed = "orange";
+    var seed = "banana";
     console.log(seed);
     Math.seedrandom(seed);
     do {
