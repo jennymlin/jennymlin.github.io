@@ -72,7 +72,7 @@ function init() {
   $( document ).ready(function() {
     console.log( "ready!" );
     //pseudo random generator seed
-    var seed = "stars";
+    var seed = "ornaments";
     console.log(seed);
     Math.seedrandom(seed);
     do {
